@@ -11,8 +11,11 @@ void add_to_linkedlist(linked_list *parent, linked_list *new) {
     parent->next = new;
 }
 
-void make_link(char *name, linked_list *parent) {
-    
+linked_list *make_link(char *data) {
+    linked_list *node = malloc(sizeof(linked_list));
+    node->data = data;
+    node->next = NULL;
+    return node;
 }
 
 void print_linkedlist(linked_list *node) {
@@ -36,36 +39,9 @@ int main(void) {
     parent->data = "ajaj";
     parent->next = NULL;
 
-    linked_list *new = malloc(sizeof(linked_list));
-    new->data = "fasa";
-    new->next = NULL;
-    add_to_linkedlist(parent, new);
-
-
-    new = malloc(sizeof(linked_list));
-    new->data = "misa";
-    new->next = NULL;
-    add_to_linkedlist(parent, new);
-
-    new = malloc(sizeof(linked_list));
-    new->data = "misa";
-    new->next = NULL;
-    add_to_linkedlist(parent, new);
-
-    new = malloc(sizeof(linked_list));
-    new->data = "misa";
-    new->next = NULL;
-    add_to_linkedlist(parent, new);
-
-    new = malloc(sizeof(linked_list));
-    new->data = "misa";
-    new->next = NULL;
-    add_to_linkedlist(parent, new);
-
-    new = malloc(sizeof(linked_list));
-    new->data = "misa";
-    new->next = NULL;
-    add_to_linkedlist(parent, new);
+    add_to_linkedlist(parent, make_link("fasa"));
+    add_to_linkedlist(parent, make_link("dasa"));
+    add_to_linkedlist(parent, make_link("kasa"));
 
     print_linkedlist(parent);
 
